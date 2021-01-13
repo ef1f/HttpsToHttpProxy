@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 ## Copy our default nginx config
-COPY nginx/default.conf.template /etc/nginx/conf.d/
+COPY default.conf.template /etc/nginx/conf.d/
 
 ## Copy certificate
 #COPY certificate/amr.crt /etc/nginx
