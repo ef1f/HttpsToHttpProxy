@@ -15,6 +15,6 @@ apk add gettext mc
 
 EXPOSE 443
 
-CMD envsubst </etc/nginx/conf.d/default.conf.template> /etc/nginx/conf.d/default.conf && \
+CMD envsubst '\$ENV_SERVER_NAME, \$ENV_PASS_HOST'  </etc/nginx/conf.d/default.conf.template> /etc/nginx/conf.d/default.conf && \
 exec nginx -g 'daemon off;'
 
