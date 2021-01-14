@@ -12,6 +12,6 @@ server {
   #return 301 http://$host$request_uri;
   
   location / {
-		proxy_pass http://$ENV_PASS_HOST;
+		proxy_pass $ENV_PASS_HOST;
 	}
 }
