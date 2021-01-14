@@ -12,7 +12,7 @@ server {
   #return 301 http://$host$request_uri;
   
   location / {
-		proxy_pass http://$ENV_HOST;
+		proxy_pass http://$ENV_PASS_HOST;
 		proxy_set_header Host $http_host;
 		proxy_set_header X-Forwarded-Host $host;
 		proxy_set_header X-Real-IP $remote_addr;
