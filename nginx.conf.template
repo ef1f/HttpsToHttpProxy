@@ -31,7 +31,7 @@ http {
 	server {
 
 	  listen              443 ssl;
-	  #server_name         $ENV_SERVER_NAME;
+
 	  ssl_certificate     /certificate/amr.crt;
 	  ssl_certificate_key /certificate/amr.key;
 	  ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
@@ -39,8 +39,6 @@ http {
 	 
 	  #root /usr/share/nginx/html;
 
-	  #return 301 http://$host$request_uri;
-  
 	  location / {
 			proxy_pass http://pass_host;
 			#proxy_set_header Host $ENV_SERVER_NAME;
