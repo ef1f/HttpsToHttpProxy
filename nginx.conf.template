@@ -40,7 +40,7 @@ http {
 	  location / {
 			proxy_pass http://pass_host;
 
-			proxy_redirect     off;
+		#	proxy_redirect     off;
 			proxy_set_header Host $http_host;
 			proxy_set_header X-Forwarded-Host $host;
 			proxy_set_header X-Real-IP $remote_addr;
