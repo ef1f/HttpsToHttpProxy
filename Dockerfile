@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:latest
 
 ## Copy our default nginx config
 COPY default.conf.template /etc/nginx/conf.d/
