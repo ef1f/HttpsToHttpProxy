@@ -9,7 +9,8 @@ COPY default.conf.template /etc/nginx/conf.d/
 
 ## Remove default nginx website and add envsubst, mc
 RUN mkdir /certificate && rm -rf /usr/share/nginx/html/* && \
-apt-get install gettext mc
+apt-get update -y && \
+apt-get install -y --no-install-recommends gettext mc
 #apk add gettext mc
 
 # CMD ["nginx", "-g", "daemon off;"]
