@@ -5,7 +5,7 @@ COPY nginx.conf.template /etc/nginx/
 
 
 ## Remove default nginx website and add envsubst, mc
-RUN mkdir /certificate && rm -rf /usr/share/nginx/html/* && \
+RUN mkdir /certificate && rm -rf /usr/share/nginx/html/* && rm -rf /etc/nginx/conf.d/* && \
 apk add gettext mc
 
 EXPOSE 443
