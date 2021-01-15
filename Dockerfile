@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 ## Copy our default nginx config
-COPY default.conf.template /etc/nginx/conf.d/
+COPY default.conf.template /etc/nginx/
 
 
 ## Remove default nginx website and add envsubst, mc
@@ -10,6 +10,6 @@ apk add gettext mc
 
 EXPOSE 443
 
-CMD envsubst </etc/nginx/conf.d/default.conf.template> /etc/nginx/conf.d/default.conf && \
+CMD envsubst </etc/nginx/default.conf.template> /etc/nginx/nginx.conf && \
 exec nginx -g 'daemon off;'
 
