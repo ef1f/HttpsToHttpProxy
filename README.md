@@ -33,4 +33,4 @@ services:
       - <you service>
 ```
 
-The folder with certificates must contain two files .crt and .key
+The folder with certificates must contain two files cert.crt and cert.key
