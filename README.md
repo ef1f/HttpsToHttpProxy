@@ -7,12 +7,7 @@ docker build -t image_name:latest .
 
 **Run**
 ```
-docker run -d 
-           -e ENV_PASS_HOST=<server_host>:<port> 
-           -e ENV_CRT_NAME=<.crt file name>
-           -e ENV_KEY_NAME<.key file name>
-           -v <your certificates folder path>:/certificate 
-           -p <proxy port>:443 --name reverse_proxy ef1f/https-to-http-proxy:latest
+docker run -d -e ENV_PASS_HOST=you_service:port -e ENV_CRT_NAME=you_file_name.crt -e ENV_KEY_NAME=you_file_name.key -v your_certificates_folder_path:/certificate -p proxy_port:443 --name reverse_proxy ef1f/https-to-http-proxy:latest
 ```
 
 **Compose file example**
@@ -20,8 +15,8 @@ docker run -d
 version: '2'
 
 services:
-  <you service>:
-    image: <service image>
+  you_service:
+    image: service_image
     ports:
       - "8081:8080"
  
@@ -31,13 +26,13 @@ services:
     ports:
       - "8088:443"
     volumes:
-      - /<your certificates folder path>:/certificate     
+      - /your_certificates_folder_path:/certificate     
     environment:
-      - ENV_PASS_HOST=<you service>:8080
-      - ENV_CRT_NAME=<.crt file name>
-      - ENV_KEY_NAME=<.key file name>
+      - ENV_PASS_HOST=you_service:8081
+      - ENV_CRT_NAME=you_file_name.crt 
+      - ENV_KEY_NAME=you_file_name.key 
     depends_on:
-      - <you service>
+      - you_service
 ```
 
 The folder with certificates must contain two files .crt and .key
