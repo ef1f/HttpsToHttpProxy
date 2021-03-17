@@ -28,7 +28,7 @@ services:
     volumes:
       - /your_certificates_folder_path:/certificate     
     environment:
-      - ENV_PASS_HOST=you_http_service:8081
+      - ENV_PASS_HOST=you_http_service:8080
       - ENV_CRT_NAME=you_file_name.crt 
       - ENV_KEY_NAME=you_file_name.key 
     depends_on:
